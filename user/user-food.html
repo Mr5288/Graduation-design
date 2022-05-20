@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购买小食</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./css/user-food.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../layui/layui.js"></script>
+
+</head>
+
+<body>
+    <div class="user-food-page layui-anim layui-anim-scale">
+        <div class=" food_search  container layui-anim layui-anim-up">
+            <ul class="imgcss">
+                <li><img src="./images/food/1.gif" alt=""></li>
+                <li><img src="./images/food/6.gif" alt=""></li>
+                <li><img src="./images/food/4.gif" alt=""></li>
+                <li><img src="./images/food/5.gif" alt=""></li>
+                <li><img src="./images/food/7.gif" alt=""></li>
+                <li><img src="./images/food/1.gif" alt=""></li>
+                <li><img src="./images/food/3.gif" alt=""></li>
+                <li><img src="./images/food/4.gif" alt=""></li>
+                <li><img src="./images/food/5.gif" alt=""></li>
+                <li><img src="./images/food/7.gif" alt=""></li>
+                <li><img src="./images/food/1.gif" alt=""></li>
+            </ul>
+        </div>
+        <div class="food_search food_buy_left">
+            <fieldset class="layui-elem-field" style="padding: 20px;" id="eat-list">
+
+            </fieldset>
+        </div>
+        <div class="food_search food_buy_right">
+            <fieldset class="layui-elem-field" style="padding: 20px;" id="drink-list">
+
+            </fieldset>
+        </div>
+
+    </div>
+    <!-- 食品数据模板 -->
+    <script type="text/html" id="tpl-eattable">
+        <legend>查看小食 - 甜品分类</legend>
+        {{each data}}
+        <div class="food_sort">
+            <div class="food_pic">
+                <img src="{{$value.food_pic}}" class="pic" alt="">
+            </div>
+            <div class="food_info_box">
+                <div class="food_info"><strong style="font-size: 25px;">{{$value.food_name}}</strong>
+                    <p>容量：标准</p>
+                    <p>日期：{{$value.food_date | dateFormat}}</p>
+                    <p>剩余： {{$value.food_stock}} 件</p>
+                </div>
+                <div class="food_price">
+                    <span class="span">
+                    ￥{{$value.food_price}}
+                    </span>
+                </div>
+
+            </div>
+            <div class="btn">
+                <div class="btn_top"></div>
+                <div class="btn_top btn_bottom"><button type="button" class="layui-btn layui-btn-normal  btn-buy" data-id="{{$value.id}}">购买</button></div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- 饮品数据模板 -->
+    <script type="text/html" id="tpl-drinktable">
+        <legend>查看小食 - 饮品分类</legend>
+        {{each data}}
+        <div class="food_sort">
+            <div class="food_pic">
+                <img src="{{$value.food_pic}}" class="pic" alt="">
+            </div>
+            <div class="food_info_box">
+                <div class="food_info"><strong style="font-size: 25px;">{{$value.food_name}}</strong>
+                    <p>容量：标准</p>
+                    <p>日期：{{$value.food_date | dateFormat}}</p>
+                    <p>剩余： {{$value.food_stock}} 件</p>
+                </div>
+                <div class="food_price">
+                    <span class="span">
+                    ￥{{$value.food_price}}
+                    </span>
+                </div>
+
+            </div>
+            <div class="btn">
+                <div class="btn_top"></div>
+                <div class="btn_top btn_bottom"><button type="button" class="layui-btn layui-btn-normal  btn-buy" data-id="{{$value.id}}">购买</button></div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- 购买食品数据模板 -->
+    <script type="text/html" id="dialog-edit">
+        <form class="layui-form" id="form-buy" lay-filter="form-edit">
+            <div class="layui-form-item">
+                <label class="layui-form-label">会员名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" id="username" required lay-verify="required" autocomplete="off" class="layui-input not" readonly>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">食品名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="food_name" required lay-verify="required" class="layui-input not" readonly>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">食品数量</label>
+                <div class="layui-input-block">
+                    <input type="text" name="food_num" id="food_num" required lay-verify="required" autocomplete="off" class="layui-input ">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">总价</label>
+                <div class="layui-input-block">
+                    <input type="text" name="food_price" id="food_price" required lay-verify="required" autocomplete="off" class="layui-input not" readonly>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" style="width: 225px;">购买</button>
+                    <!-- <button type="reset" class="layui-btn layui-btn-primary">重置</button> -->
+                </div>
+            </div>
+        </form>
+    </script>
+    <script src="../js/template-web.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="./js/user-food.js"></script>
+</body>
+
+</html>

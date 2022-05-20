@@ -1,0 +1,118 @@
+.catering_index {
+    width: 1180px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #efefef;
+}
+
+.food {
+    margin: 20px;
+}
+
+.food1 {
+    float: left;
+    width: 347px;
+    height: 200px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.food1:hover {
+    box-shadow: 0 0 15px 2px #918f8f;
+    /*盒子阴影*/
+    transition: all 0.5s;
+    /*持续时间*/
+}
+
+.food2 {
+    border: 2px solid #f0f0f0;
+}
+
+.btn {
+    width: 347px;
+    height: 200px;
+    background-color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 200px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #1890ff;
+}
+
+.food_picbox {
+    width: 330px;
+    height: 143px;
+    margin: 8px;
+}
+
+.btn_box {
+    width: 347px;
+    height: 38px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.food_pic {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.food_pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.foodinfo {
+    float: left;
+    width: 210px;
+    height: 23px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.btn_left {
+    float: left;
+    width: 163px;
+}
+
+.btn_right {
+    float: left;
+    width: 162px;
+    border-left: 2px solid #f0f0f0;
+}
+
+.btn_box .layui-btn {
+    width: 182px;
+    padding: 0;
+    color: black;
+    background-color: #fff;
+}
+
+.btn_box .layui-btn:hover {
+    color: red;
+}
+
+.layui-elem-field {
+    border-color: rgb(176 168 168);
+}
+
+.footer {
+    position: absolute;
+    top: 1095px;
+    left: 18%;
+    width: 82%;
+    height: 130px;
+    background-color: #f0f0f0;
+}

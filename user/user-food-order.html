@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./css/user-order.css">
+    <script src="../layui/layui.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="user-order-page layui-anim layui-anim-scale">
+        <!-- 嵌入导航 -->
+        <div class="index_right_nav">
+            <a href="./user-order.html">电影订单　></a>
+            <a href="javascript:;">　小食订单　></a>
+        </div>
+        <div class="movie_orders food_orders layui-anim layui-anim-up layui-anim-up">
+            <fieldset class="layui-elem-field" style="padding: 20px;">
+                <legend>我的订单 - 小食订单</legend>
+                <table class="layui-table" style="text-align: center;">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">订单号</th>
+                            <th style="text-align: center;">商品名</th>
+                            <th style="text-align: center;">数量</th>
+                            <th style="text-align: center;">价格</th>
+                            <th style="text-align: center;">状态</th>
+                            <th style="text-align: center;">创建时间</th>
+                            <th style="text-align: center;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Forder-list"></tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+
+    <!-- 食品表格数据的模板 -->
+    <script type="text/html" id="tpl-foodtable">
+        {{each data}}
+        <tr>
+            <td>YYYY-2022-{{$value.id}}</td>
+            <td>{{$value.food_name}}</td>
+            <td>{{$value.food_num}}</td>
+            <td>￥{{$value.food_price}}</td>
+            <td>{{$value.food_state | dateState}}</td>
+            <td>{{$value.creat_time | dateFormat}}</td>
+            <td><button type="button" class="layui-btn layui-btn-warm layui-btn-sm layui-btn layui-btn-disabled btn-edit" data-id="{{$value.id}}" disabled>退订</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-sm layui-btn btn-delete" data-id="{{$value.id}}">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script src="../js/template-web.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="./js/user-food-order.js"></script>
+</body>
+
+</html>

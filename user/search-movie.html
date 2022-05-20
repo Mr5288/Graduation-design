@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索电影</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="./css/search-movie.css">
+    <script src="../layui/layui.js"></script>
+    <script src="../js/jquery.js"></script>
+
+</head>
+
+<body>
+    <div class="page layui-anim layui-anim-scale">
+        <div class="header">
+            <div class="search">
+                <input type="text" class="sea" placeholder="搜索热播电影...">
+                <button type="button" class="btn">&#xe63d</button>
+            </div>
+        </div>
+        <div class="no not" id="no">
+            <div class="text">
+                抱歉没有找到相关电影
+                <p>1. 请检查输入的关键词是否有误 </p>
+                <p>2. 请缩短关键词</p>
+            </div>
+        </div>
+        <div class="movie_page" id="movies-list">
+
+        </div>
+    </div>
+
+    <!-- 表格数据的模板 -->
+    <script type="text/html" id="tpl-movies">
+        {{each data}}
+        <div class="movie-list-page">
+            <div class="movie_list btn-edit" data-id="{{$value.id}}">
+                <img src="{{$value.movie_pic}}" style="cursor:pointer">
+            </div>
+            <div class="movie-info">
+                <div class="movie_name">{{$value.movie_name}}</div>
+                <div class="movie_enname">{{$value.movie_enname}}</div>
+                <div class="type">{{$value.movie_type}}</div>
+                <div class="time">{{$value.release_time}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script src="../js/template-web.js"></script>
+    <script src="./js/search_movie.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+  .usersearch {
+      width: 1180px;
+      height: 30px;
+      margin-left: 20px;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+  }
+  
+  .layui-input {
+      width: 100%;
+  }
+  
+  .user_men {
+      width: 1180px;
+      margin-left: 20px;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+  }
+  
+  .text-avatar {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #2d8cf0;
+      border-radius: 50%;
+      line-height: 35px;
+      text-align: center;
+      font-size: 20px;
+      color: #222;
+      position: relative;
+      top: 3px;
+      left: -66px;
+  }
+  
+  .footer {
+      position: absolute;
+      top: 873px;
+      width: 100%;
+      left: 0;
+      height: 130px;
+      background-color: #f0f0f0;
+  }
+  
+  .footer p {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 22px;
+      height: 22px;
+      color: #999;
+  }

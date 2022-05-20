@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统设置</title>
+    <link rel="stylesheet" href="./css/indexcss.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script src="../js/jquery.js"></script>
+    <style>
+        .page {
+            width: 100%;
+            height: 520px;
+            padding-top: 50px;
+            background-color: #f0f0f0;
+        }
+        
+        .theme {
+            width: 1090px;
+            margin-left: 60px;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        .theme_color {
+            float: left;
+            width: 150px;
+            height: 80px;
+            margin-right: 50px;
+        }
+        
+        .red {
+            /* background-color: red;*/
+            margin-left: 40px;
+        }
+        /* .blue {
+            background-color: blue;
+        }
+        
+        .default {
+            background-color: midnightblue;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .purple {
+            background-color: purple;
+        } */
+        
+        .theme_word {
+            float: left;
+            width: 150px;
+            height: 20px;
+            margin-top: 20px;
+            margin-right: 50px;
+        }
+        
+        .word {
+            line-height: 20px;
+            font-size: 16px;
+            margin-left: 30px;
+        }
+        
+        .radio {
+            margin-right: 5px;
+        }
+        
+        .imgsize {
+            width: 150px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page layui-anim layui-anim-scale">
+        <div class="theme">
+            <fieldset class="layui-elem-field" style="padding: 20px;">
+                <legend>系统设置 - 主题更换</legend>
+                <div class="red theme_color">
+                    <img src="../user/images/theme/themered.png" alt="" class="imgsize">
+                </div>
+                <div class="blue theme_color">
+                    <img src="../user/images/theme/themeblue.png" alt="" class="imgsize">
+                </div>
+                <div class="default theme_color">
+                    <img src="../user/images/theme/themedefau.png" alt="" class="imgsize">
+                </div>
+                <div class="green theme_color">
+                    <img src="../user/images/theme/themegreen.png" alt="" class="imgsize">
+                </div>
+                <div class="purple theme_color">
+                    <img src="../user/images/theme/themepurple.png" alt="" class="imgsize">
+                </div>
+                <div class="red theme_word">
+                    <label class="word"><input type="radio" name="color" class="radio" onclick="changeStyleRed()">烈焰日暮</label>
+                </div>
+                <div class="blue theme_word">
+                    <label class="word"><input type="radio" name="color" class="radio" onclick="changeStyleBlue()">极客之蓝</label>
+                </div>
+                <div class="default theme_word">
+                    <label class="word"><input type="radio" name="color" class="radio" checked onclick="changeStyleDefault()">默认主题</label>
+                </div>
+                <div class="green theme_word">
+                    <label class="word"><input type="radio" name="color" class="radio" onclick="changeStyleGreen()" >极光墨绿</label>
+                </div>
+                <div class="purple theme_word">
+                    <label class="word"><input type="radio" name="color" class="radio" onclick="changeStylePurple()">浓情酱紫</label>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <script>
+        function changeStyleRed() {
+            var stylecss = window.parent.document.getElementById("css");
+            stylecss.setAttribute("href", "./css/theme/indexred.css");
+            //document.cookie="stylecss="+escape(stylecss);//写入Cookie
+        }
+
+        function changeStyleBlue() {
+            var stylecss = window.parent.document.getElementById("css");
+            stylecss.setAttribute("href", "./css/theme/indexblue.css");
+        }
+
+        function changeStyleDefault() {
+            var stylecss = window.parent.document.getElementById("css");
+            stylecss.setAttribute("href", "./css/theme/indexdefualt.css");
+        }
+
+        function changeStyleGreen() {
+            var stylecss = window.parent.document.getElementById("css");
+            stylecss.setAttribute("href", "./css/theme/indexgreen.css");
+        }
+
+        function changeStylePurple() {
+            var stylecss = window.parent.document.getElementById("css");
+            stylecss.setAttribute("href", "./css/theme/indexpurple.css");
+        }
+    </script>
+    <script src="../layui/layui.js"></script>
+</body>
+
+</html>

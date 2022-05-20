@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择座位</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./css/user-buy-seat.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../layui/layui.js"></script>
+</head>
+
+<body>
+    <div class="container layui-anim layui-anim-scale">
+        <div class="order-progress-bar">
+            <div class="step first done">
+                <span class="step-num">1</span>
+                <div class="bar"></div>
+                <span class="step-text">选择影片场次</span>
+            </div>
+            <div class="step done">
+                <span class="step-num">2</span>
+                <div class="bar"></div>
+                <span class="step-text">选择座位</span>
+            </div>
+            <div class="step " id="done">
+                <span class="step-num">3</span>
+                <div class="bar"></div>
+                <span class="step-text">付款</span>
+            </div>
+            <div class="step last" id="done2">
+                <span class="step-num">4</span>
+                <div class="bar"></div>
+                <span class="step-text">影院取票观影</span>
+            </div>
+
+        </div>
+        <div class="main clearfix">
+            <div class="hall">
+                <div class="seat-example">
+                    <div class="selectable-example example">
+                        <span>可选座位</span>
+                    </div>
+                    <div class="sold-example example">
+                        <span>已售座位</span>
+                    </div>
+                    <div class="selected-example example">
+                        <span>已选座位</span>
+                    </div>
+                    <div class="couple-example example">
+                        <span>情侣座位</span>
+                    </div>
+                </div>
+                <div class="seats-block" data-cols="10" data-section-id="0" data-section-name="默认分区" data-seq-no="202202070125005">
+                    <div class="row-id-container">
+                        <span class="row-id">1</span>
+                        <span class="row-id">2</span>
+                        <span class="row-id">3</span>
+                        <span class="row-id">4</span>
+                    </div>
+                    <div class="seats-container">
+                        <div class="screen-container" style="left: 105px;">
+                            <div class="screen">银幕中央</div>
+                            <div class="c-screen-line"></div>
+                        </div>
+                        <div class="seats-wrapper">
+                            <div class="row">
+                                <span class="seat selectable" data-column-id="1" data-row-id="1" id="1_1"></span>
+                                <span class="seat selectable" data-column-id="2" data-row-id="1" id="1_2"></span>
+                                <span class="seat selectable" data-column-id="3" data-row-id="1" id="1_3"></span>
+                                <span class="seat selectable" data-column-id="4" data-row-id="1" id="1_4"></span>
+                                <span class="seat selectable" data-column-id="5" data-row-id="1" id="1_5"></span>
+                                <span class="seat selectable" data-column-id="6" data-row-id="1" id="1_6"></span>
+                                <span class="seat selectable" data-column-id="7" data-row-id="1" id="1_7"></span>
+                                <span class="seat selectable" data-column-id="8" data-row-id="1" id="1_8"></span>
+                                <span class="seat selectable" data-column-id="9" data-row-id="1" id="1_9"></span>
+                            </div>
+                            <div class="row">
+                                <span class="seat selectable" data-column-id="1" data-row-id="2" id="2_1"></span>
+                                <span class="seat selectable" data-column-id="2" data-row-id="2" id="2_2"></span>
+                                <span class="seat selectable" data-column-id="3" data-row-id="2" id="2_3"></span>
+                                <span class="seat selectable" data-column-id="4" data-row-id="2" id="2_4"></span>
+                                <span class="seat selectable" data-column-id="5" data-row-id="2" id="2_5"></span>
+                                <span class="seat selectable" data-column-id="6" data-row-id="2" id="2_6"></span>
+                                <span class="seat selectable" data-column-id="7" data-row-id="2" id="2_7"></span>
+                                <span class="seat selectable" data-column-id="8" data-row-id="2" id="2_8"></span>
+                                <span class="seat selectable" data-column-id="9" data-row-id="2" id="2_9"></span>
+                            </div>
+                            <div class="row">
+                                <span class="seat selectable" data-column-id="1" data-row-id="3" id="3_1"></span>
+                                <span class="seat selectable" data-column-id="2" data-row-id="3" id="3_2"></span>
+                                <span class="seat selectable" data-column-id="3" data-row-id="3" id="3_3"></span>
+                                <span class="seat selectable" data-column-id="4" data-row-id="3" id="3_4"></span>
+                                <span class="seat selectable" data-column-id="5" data-row-id="3" id="3_5"></span>
+                                <span class="seat selectable" data-column-id="6" data-row-id="3" id="3_6"></span>
+                                <span class="seat selectable" data-column-id="7" data-row-id="3" id="3_7"></span>
+                                <span class="seat selectable" data-column-id="8" data-row-id="3" id="3_8"></span>
+                                <span class="seat selectable" data-column-id="9" data-row-id="3" id="3_9"></span>
+                            </div>
+                            <div class="row">
+                                <span class="seat selectable" data-column-id="1" data-row-id="4" id="4_1"></span>
+                                <span class="seat selectable" data-column-id="2" data-row-id="4" id="4_2"></span>
+                                <span class="seat selectable" data-column-id="3" data-row-id="4" id="4_3"></span>
+                                <span class="seat selectable" data-column-id="4" data-row-id="4" id="4_4"></span>
+                                <span class="seat selectable" data-column-id="5" data-row-id="4" id="4_5"></span>
+                                <span class="seat selectable" data-column-id="6" data-row-id="4" id="4_6"></span>
+                                <span class="seat selectable" data-column-id="7" data-row-id="4" id="4_7"></span>
+                                <span class="seat selectable" data-column-id="8" data-row-id="4" id="4_8"></span>
+                                <span class="seat selectable" data-column-id="9" data-row-id="4" id="4_9"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="movie-info clearfix">
+                    <div class="poster">
+                        <img id="movie_pic" src="./images/movie_pic/1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <p class="name text-ellipsis" id="movie_name">奇迹·笨小孩</p>
+                        <div class="info-item">
+                            <span class="value" id="movie_enname">englishname</span>
+                        </div>
+                        <div class="info-item">
+                            <span>类型：</span>
+                            <span class="value" id="movie_type">剧情</span>
+                        </div>
+                        <div class="info-item">
+                            <span>时长：</span>
+                            <span class="value" id="movie_time1">106分钟</span>
+                        </div>
+                    </div>
+                    <div class="show-info">
+                        <div class="info-item">
+                            <span>影厅：</span>
+                            <span class="value" id="cinema_name">10号VIP厅</span>
+                        </div>
+                        <div class="info-item">
+                            <span>版本：</span>
+                            <span class="value" id="lan_ver">国语2D</span>
+                        </div>
+                        <div class="info-item">
+                            <span>时间：</span>
+                            <span class="value" id="star_time">12:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span>票价：</span>
+                            <span class="value pre">￥<span  id="price">118</span> /张</span>
+                        </div>
+                    </div>
+                    <div class="ticket-info">
+                        <div class="no-ticket ">
+                            <p class="buy-limit">座位：</p>
+                        </div>
+                        <div class="has-ticket">
+                            <span class="text">座位：</span>
+                            <div class="ticket-container" id="tickets" data-limit="4">
+                            </div>
+                        </div>
+                        <div class="ticket-container"></div>
+                        <div class="total-price">
+                            <span>总价：</span>
+                            <span class="price">￥<span id="price_sum">0</span> </span>
+                        </div>
+                    </div>
+                    <div class="confirm-order">
+                        <div class="confirm-btn  disable" data-act="confirm-click" data-bid="b_0a0ep6pp">确认选座</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 订单数据 -->
+    <script type="text/html" id="dialog-add">
+        <form class="layui-form" id="form-add" lay-filter="form-edit" style="margin-top: 20px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名:</label>
+                <input type="text" name="username" id="username" required lay-verify="required" autocomplete="off" class="layui-input " readonly>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影名:</label>
+                <input type="text" name="movie_name" id="movie_name1" required lay-verify="required" autocomplete="off" class="layui-input " readonly>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影英文名:</label>
+                <input type="text" name="movie_enname" id="movie_enname1" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">影厅:</label>
+                <input type="text" name="cinema" id="cinema1" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">时间:</label>
+                <input type="text" name="start_time" id="star_time1" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">座位:</label>
+                <input type="text" name="seat" id="seat1" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">价格:</label>
+                <input type="text" name="price" id="price1" required lay-verify="required" autocomplete="off" class="layui-input" readonly>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">立即购买</button>
+            </div>
+        </form>
+    </script>
+    <script src="../js/moment.min.js"></script>
+    <script src="./js/user_seat_buy.js"></script>
+    <script src="./js/user-seat-selection.js"></script>
+    <script src="./js/user-seat-submit.js"></script>
+</body>
+
+</html>

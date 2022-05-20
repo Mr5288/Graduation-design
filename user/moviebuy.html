@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购票</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./css/movie_buy.css">
+    <link rel="shortcut icon" href="../bitbug_favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="page layui-anim layui-anim-scale">
+        <div class="banner">
+            <div class="centerbox">
+                <div class="win"><img id="movie_pic" src="./images/movie_pic/mm1.jpg" alt=""></div>
+                <div class="movietitle">
+                    <h1 id="movie_name">奇迹·笨小孩</h1>
+                    <p id="movie_enname">Nice View</p>
+                    <ul>
+                        <li id="movie_type">剧情</li>
+                        <li id="area">中国大陆</li>
+                        <li id="movie_time1">106分钟</li>
+                        <li id="release_time">2022-02-01 08:00中国大陆上映</li>
+                    </ul>
+                </div>
+                <div class="scorebuy">
+                    <a href="javascript:;" class="red_buy">想看</a>
+                    <a href="javascript:;" class="red_buy">评分</a>
+                    <a href="./movie-type.html" class="redbuy">查看更多详情</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie_time">
+            <span class="time_">观影时间：</span>
+            <span class="time_ see_time" id="today">今天X月X日</span>
+            <!-- <span class="time_ see_time" id="today2">明天X月X日</span> -->
+            <!-- <span class="time_">后天2月9日</span> -->
+        </div>
+        <div class="movie_table">
+            <table class="plist">
+                <thead>
+                    <tr>
+                        <th>放映时间</th>
+                        <th>语言版本</th>
+                        <th>放映厅</th>
+                        <th>售价（元）</th>
+                        <th>选座购票</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="no not">
+            <p>暂无影厅排片数据，去看看其他电影吧~</p>
+        </div>
+    </div>
+    <!-- 影厅播放数据模板 -->
+    <script type="text/html" id="tpl-table">
+        {{each data}}
+        <tr>
+            <td>
+                <span class="begin-time">{{$value.star_time |dateFormat}}</span>
+                <br>
+                <span class="end-time">{{$value.end_time | dateFormat}}</span>
+            </td>
+            <td>
+                <span>{{$value.lan_ver}}</span>
+            </td>
+            <td>
+                <span>{{$value.cinema_name}}</span>
+            </td>
+            <td class="price">
+                ￥{{$value.price}}
+            </td>
+            <td>
+                <button type="button" class="buy-btn btn-edit" data-id="{{$value.id}}" style="cursor: pointer;">选座购票</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <script src="../js/jquery.js"></script>
+    <script src="../layui/layui.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/template-web.js"></script>
+    <script src="./js/userbuy-info.js"></script>
+
+</body>
+
+</html>

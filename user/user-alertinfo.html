@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息修改</title>
+    <link rel="stylesheet" href="./css/user-alertinfo.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./css/user-center.css">
+    <link rel="stylesheet" href="../cropper/cropper.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../layui/layui.js"></script>
+</head>
+
+<body>
+    <div class="index_right layui-anim layui-anim-scale">
+        <!-- 嵌入导航 -->
+        <div class="index_right_nav">
+            <a href="./index.html">系统首页　></a>
+            <a href="./user-center.html">　个人中心　></a>
+            <a href="javascript:;">　修改信息　></a>
+        </div>
+        <!-- 修改信息主页 -->
+        <div class="alert_inf">
+            <fieldset class="layui-elem-field">
+                <legend>个人中心 - 信息修改</legend>
+                <div class="userinfoandpwd" style="float: left; width: 50%;">
+                    <!-- 修改信息form 表单区域 -->
+                    <form class="layui-form infoform" lay-filter="formUserInfo">
+                        <input type="hidden" name="id" value="" />
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="username" required lay-verify="required" placeholder="请输入登录名称" autocomplete="off" class="layui-input" readonly />
+                                <div class="layui-form-mid layui-word-aux">用户名不可修改哦~</div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">性别</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="sex" id="sex" required lay-verify="required|sex" placeholder="请输入用户性别" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">电话</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="phone" id="phone" required lay-verify="required|phone" placeholder="请输入电话" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户邮箱</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="email" id="email" required lay-verify="required|email" placeholder="请输入用户邮箱" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">提交修改</button>
+                                <button type="reset" class="layui-btn layui-btn-primary" id="btnReset">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 修改密码form 表单区域 -->
+                    <form class="layui-form">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">原密码</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="oldPwd" required lay-verify="required | pwd" placeholder="请输入原密码" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">新密码</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="newPwd" required lay-verify="required|pwd|samePwd" placeholder="请输入新密码" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">确认新密码</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="rePwd" required lay-verify="required|pwd|rePwd" placeholder="请再次确认密码" autocomplete="off" class="layui-input" />
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">修改密码</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- 修改头像区域 -->
+                <div class="userinfoavatar" style="float: left;width: 50%; margin-top: 50px;">
+                    <!-- <div class=" alert_picd img-preview" style="margin-left: 35%; width: 200px;height: 200px;border-radius: 50%;">
+                            <img id="image" src="../user/images/User_Avatar/pic3.jpg " alt=" " class="user_p img-preview">
+                            <span class="text-avatar " style="width: 200px; height: 200px; border-radius: 50%;background-color: #2d8cf0; ">A</span>
+                            <input type="file" style="display: none1;" id="flie">
+                        </div> -->
+                    <!-- 第一行的图片裁剪和预览区域 -->
+                    <div class="row1">
+                        <!-- 图片裁剪区域 -->
+                        <div class="cropper-box">
+                            <!-- 这个 img 标签很重要，将来会把它初始化为裁剪区域 -->
+                            <img id="image" src="../user/images/User_Avatar/pic3.jpg" />
+                        </div>
+                        <!-- 图片的预览区域 -->
+                        <div class="preview-box">
+                            <div>
+                                <!-- 宽高为 100px 的预览区域 -->
+                                <div class="img-preview w100"></div>
+                                <p class="size">100 x 100</p>
+                            </div>
+                            <div>
+                                <!-- 宽高为 50px 的预览区域 -->
+                                <div class="img-preview w50"></div>
+                                <p class="size">50 x 50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 第二行的按钮区域 -->
+                    <div class="row2">
+                        <!-- 通过 accept 属性，可以指定，允许用户选择什么类型的文件 -->
+                        <input type="file" id="file" accept="image/png,image/jpeg" />
+                        <button type="button" class="layui-btn layui-btn-primary layui-border-blue" id="btnChooseImage">选择头像</button>
+                        <button type="button" class="layui-btn layui-btn-normal" id="btnUpload">确定</button>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <script src="../cropper/Cropper.js"></script>
+    <script src="../cropper/jquery-cropper.js"></script>
+    <script src="../admin/js/admin_user_info.js"></script>
+    <script src="./js/user-alertinfo.js"></script>
+</body>
+
+</html>

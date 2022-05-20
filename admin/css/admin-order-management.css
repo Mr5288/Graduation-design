@@ -1,0 +1,62 @@
+ .order_index {
+     width: 1180px;
+     margin-left: 20px;
+     margin-top: 20px;
+     padding: 20px;
+     border-radius: 10px;
+     background-color: #fff;
+ }
+ 
+ .footer {
+     position: absolute;
+     top: 1025px;
+     left: 18%;
+     width: 82%;
+     height: 130px;
+     background-color: #f0f0f0;
+ }
+ 
+ .search_input_box {
+     float: left;
+     width: 260px;
+     height: 40px;
+     margin-left: 35px;
+     margin-top: 10px;
+ }
+ 
+ .order_search_input {
+     width: 180px;
+     height: 30px;
+     border-radius: 10px;
+     border: 1px solid black;
+ }
+ 
+ .order_search {
+     width: 1180px;
+     height: 40px;
+     padding: 20px;
+     margin: 20px;
+     border-radius: 10px;
+     background-color: #fff;
+ }
+ 
+ .layui-input {
+     width: 100%;
+ }
+ 
+ .layui-btn-warm2 {
+     background-color: blueviolet;
+ }
+ 
+ thead {
+     font-size: 18px;
+     color: black;
+ }
+ 
+ .layui-table {
+     border: 1px solid black;
+ }
+ 
+ #form-edit input {
+     border: 0;
+ }

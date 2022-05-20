@@ -1,0 +1,202 @@
+.index_right {
+    height: 650px;
+}
+
+
+/*用户信息模块起始======================================================================*/
+
+.index_right_admin {
+    float: left;
+    width: 400px;
+    height: 252px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px #ddd;
+}
+
+.user_info {
+    display: flex;
+    width: 400px;
+    height: 142px;
+    align-items: center;
+}
+
+.user_info_left {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.text-avatar {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-color: #2d8cf0;
+    border-radius: 50%;
+    line-height: 120px;
+    text-align: center;
+    font-size: 50px;
+    color: #222;
+    position: relative;
+    top: -2px;
+}
+
+.user_info_right {
+    flex: 1;
+    font-size: 30px;
+    color: #222;
+}
+
+.user_info_right_name {
+    padding-left: 50px;
+}
+
+.user_info_right_name_attribute {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #999;
+}
+
+.user_info_buttom p {
+    font-size: 18px;
+    color: #999;
+    margin: 20px;
+}
+
+
+/*用户信息模块结束======================================================================*/
+
+
+/*统计模块起始======================================================================*/
+
+.index_right_statistics {
+    float: left;
+    width: 760px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+
+/*模块共用样式*/
+
+.statistics {
+    width: 240px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.modular {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px 0 0 10px;
+}
+
+.layout {
+    flex: 1;
+    text-align: center;
+}
+
+.font_inf {
+    font-size: 14px;
+    color: #999;
+}
+
+.infont {
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+}
+
+.font_css {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+
+/*统计用户模块*/
+
+.statistics_user {
+    display: flex;
+    float: left;
+}
+
+.statistics_user_left {
+    float: left;
+    background-color: #2d8cf0;
+}
+
+.statistics_user_right_num {
+    color: #2d8cf0;
+}
+
+
+/*统计今日订单模块*/
+
+.statistics_order_today {
+    display: flex;
+    float: left;
+    margin-left: 20px;
+}
+
+.statistics_order_today_left {
+    float: left;
+    background-color: #64d572;
+}
+
+.statistics_order_today_num {
+    color: #64d572;
+}
+
+
+/*统计今日销售额模块 */
+
+.statistics_sales_today {
+    display: flex;
+    float: left;
+    margin-left: 20px;
+}
+
+.statistics_sales_today_left {
+    float: left;
+    background-color: #f25e43;
+}
+
+.statistics_sales_today_num {
+    color: #f25e43;
+}
+
+
+/*统计模块结束======================================================================*/
+
+
+/*可视化区域模块起始================================================================*/
+
+.index_right_data {
+    float: left;
+    width: 760px;
+    height: 172px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #ddd;
+}
+
+.index_right_data2 {
+    float: left;
+    width: 1220px;
+    height: 250px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #ddd;
+    background-color: #fff;
+}
+
+
+/*可视化区域模块结束================================================================*/

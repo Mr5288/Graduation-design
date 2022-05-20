@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影主页</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="./css/movie_index.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../admin/js/template-web.js"></script>
+
+</head>
+
+<body>
+    <div class="page layui-anim layui-anim-scale">
+        <div class="layui-carousel" id="test1">
+            <div carousel-item>
+                <div><img src="./images/movie_pic/lunbo1.jpg" alt="" class="movie_pic"></div>
+                <div><img src="./images/movie_pic/lunbo2.jpg" alt="" class="movie_pic"></div>
+                <div><img src="./images/movie_pic/lunbo3.jpg" alt="" class="movie_pic"></div>
+                <div><img src="./images/movie_pic/lunbo4.jpg" alt="" class="movie_pic"></div>
+                <div><img src="./images/movie_pic/lunbo5.jpg" alt="" class="movie_pic"></div>
+            </div>
+        </div>
+        <!-- 条目中可以是任意内容，如：<img src=""> -->
+        <!-- 正在热映 -->
+        <div class="hot">
+            <div class="hotheader">
+                <h2>正在热映</h2>
+            </div>
+            <div class="hotmovie" id="movies-list">
+                <ul>
+                    <!-- <li><img src="./images/movie_pic/m1.jpg" id="m1" class="movie_p" alt=""><a href="./movieinfo.html" class="layui-btn btn-edit" data-id="{{$value.id}}">购买</a></li> 
+                     <li><img src="./images/movie_pic/m2.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m3.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m4.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m5.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m6.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m7.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m8.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m9.jpg" alt=""><a href="#">购买</a></li>
+                    <li><img src="./images/movie_pic/m10.jpg" alt=""><a href="#">购买</a</li>  -->
+                </ul>
+            </div>
+
+
+        </div>
+        <!-- TOP100 -->
+        <div class="ticket">
+            <div class="top2">
+                <h2>TOP10</h2>
+                <ul style="margin-top: 10px;" id="top-list">
+                    <li><a href="#"><i style="color: #FDB863;">1.</i><span>我不是药神</span><span class="sp1">9.5分</span></li></a>
+                        <li><a href="#"><i style="color: #FDB863;">2.</i><span>恐怖直播</span><span class="sp1">9.5分</span></a></li>
+                        <li><a href="#"><i style="color: #FDB863;">3.</i><span>失狐</span><span class="sp1">9.3分</span></a></li>
+                        <li><a href="#"><i>4.</i><span>绿皮书</span><span class="sp">9.0分</span></a></li>
+                        <li><a href="#"><i>5.</i><span>海上钢琴书</span><span class="sp">8.8分</span></a></li>
+                        <li><a href="#"><i>6.</i><span>熊熊出击</span><span class="sp">8.5分</span></a></li>
+                        <li><a href="#"><i>7.</i><span>霸王别姬</span><span class="sp">8.5分</span></a></li>
+                        <li><a href="#"><i>8.</i><span>小偷家族</span><span class="sp">8.3分</span></a></li>
+                        <li><a href="#"><i>9.</i><span>美丽人间</span><span class="sp">8.0分</span></a></li>
+                        <li><a href="#"><i>10.</i><span>盗梦空间</span><span class="sp">7.9分</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 经典热播 -->
+        <div class="classic">
+            <div class="classichot">
+                <h2>经典热播</h2>
+                <span><a href="./movie-type.html" target="fm">爱情</a></span>
+                <span><a href="./movie-type.html" target="fm">戏剧</a></span>
+                <span><a href="./movie-type.html" target="fm">动作</a></span>
+                <span><a href="./movie-type.html" target="fm">科幻</a></span>
+            </div>
+            <div class="classic_moviefirst ">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><img src="./images/movie_pic/m11.jpg" alt=""></a><span href="#">厉鬼将映</span></li>
+                </ul>
+            </div>
+            <div class="class_movie ">
+                <ul id="hot-movie-list">
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m12.jpg" alt=""></a><span href="#">失狐</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m13.jpg" alt=""></a><span href="#">恐怖直播</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m14.jpg" alt=""></a><span href="#">战狼</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m15.jpg" alt=""></a><span href="#">建党伟业</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m16.jpg" alt=""></a><span href="#">夏洛特烦恼</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m17.jpg" alt=""></a><span href="#">阳光姐妹淘</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m18.jpg" alt=""></a><span href="#">大圣归来</span></li>
+                    <li>
+                        <a href="#"><img src="./images/movie_pic/m19.jpg" alt=""></a><span href="#">菊次郎的夏天</span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 热门影人 -->
+        <div class="hotpeople">
+            <h2>热门影人</h2>
+            <ul style="margin-top: 15px;" id="hot-list">
+                <li style="margin-top: 10px; "><a href="#"><i style="color: #ff0c03;">1.</i><span>张颂文</span></li></a>
+                    <li><a href="#"><i style="color: #ff0c03;">2.</i><span>宋佳</span></a></li>
+                    <li><a href="#"><i style="color: #ff0c03;">3.</i><span>李晨</span></a></li>
+                    <li><a href="#"><i>4.</i><span>佟丽娅</span></a></li>
+                    <li><a href="#"><i>5.</i><span>朱亚文</span></a></li>
+                    <li><a href="#"><i>6.</i><span>胡先勖</span></a></li>
+                    <li><a href="#"><i>7.</i><span>欧豪</span></a></li>
+                    <li><a href="#"><i>8.</i><span>袁泉</span></a></li>
+                    <li><a href="#"><i>9.</i><span>张宥浩</span></a></li>
+                    <li><a href="#"><i>10.</i><span>候京健</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 正在热映数据的模板 -->
+    <script type="text/html" id="tpl-movies">
+        {{each data}}
+        <li style="float: left;  width: 160px; height: 220px;margin-top: 30px; margin-left: 25px;">
+            <img src="{{$value.movie_pic}}" alt="">
+            <a href="javascript:;" class="layui-btn btn-edit" data-id="{{$value.id}}" style="position: absolute; display: block; width: 160px;  height: 39px;  margin-top: -39px; font-size: 18px; line-height: 39px; text-align: center; background-color: rgba(0, 0, 0, .3);color: #fff;">购买
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- TOP10表格数据的模板 -->
+    <script type="text/html" id="tpl-top">
+        {{each data}}
+        <li><a href="javascript:;" class="btn-top" data-id="{{$value.id}}"><i>{{$value.id}}.</i><span>{{$value.movie_name}}</span><span class="sp">8.8分</span></a></li>
+        {{/each}}
+    </script>
+    <!-- 热播电影数据的模板 -->
+    <script type="text/html" id="tpl-movie">
+        {{each data}}
+        <li>
+            <img src="{{$value.movie_pic}}" alt="">
+            <a href="javascript:;" class="layui-btn btn-movies" data-id="{{$value.id}}" style="position: absolute; display: block; width: 160px;  height: 39px;  margin-top: -39px; font-size: 18px; line-height: 39px; text-align: center; background-color: rgba(0, 0, 0, .3);color: #fff;">{{$value.movie_name}}
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 热门影人表格数据的模板 -->
+    <script type="text/html" id="tpl-hot">
+        {{each data}}
+        <li><a href="javascript:;" class="btn-hot" data-id="{{$value.id}}"><i>{{$value.id}}.</i><span>{{$value.actor_name}}</span></a></li>
+        {{/each}}
+    </script>
+    <script src="../layui/layui.js"></script>
+    <script src="./js/user-movie.js"></script>
+    <script src="./js/movieinfo.js"></script>
+
+
+    <script>
+        layui.use('carousel', function() {
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#test1',
+                width: '100%' //设置容器宽度
+                    ,
+                arrow: 'hover' //始终显示箭头
+                    //,anim: 'updown' //切换动画方式
+            });
+        });
+    </script>
+
+</body>
+
+</html>

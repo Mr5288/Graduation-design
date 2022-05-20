@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    height: 386px;
+    margin-bottom: 60px;
+    background-color: rgb(57, 47, 89);
+}
+
+.centerbox {
+    position: relative;
+    width: 1000px;
+    height: 386px;
+    margin-left: 50px;
+}
+
+.win {
+    position: absolute;
+    width: 240px;
+    height: 330px;
+    margin: 0 50px;
+    margin-top: 30px;
+    border: 4px solid #fff;
+    background-color: brown
+}
+
+.win img {
+    width: 240px;
+    height: 330px;
+}
+
+.movietitle {
+    position: absolute;
+    width: 270px;
+    height: 200px;
+    margin-top: 30px;
+    margin-left: 330px;
+    color: #fff;
+}
+
+.movietitle ul li {
+    margin-top: 5px;
+}
+
+.scorebuy {
+    width: 270px;
+    height: 100px;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 330px;
+}
+
+.red_buy {
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 120px;
+    height: 25px;
+    background-color: #756189;
+    margin-right: 10px;
+    padding-top: 11px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.redbuy {
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 250px;
+    height: 25px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding-top: 11px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #df2d2d;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contioner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.contioner_center {
+    margin-left: 20px;
+}
+
+.contioner_center_nav {
+    font-size: 16px;
+}
+
+.table-title {
+    cursor: pointer;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: -2px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    line-height: 100%;
+}
+
+.contioner_center_list {
+    width: 600px;
+    height: 20px;
+    margin-top: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.contioner_center_title {
+    margin-top: 20px;
+}
+
+.redbox {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    margin-right: 6px;
+    background-color: #ef4238;
+}
+
+.contioner_center_title h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+    line-height: 18px;
+}
+
+.contioner_center_info {
+    width: 600px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.dir {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.not {
+    color: #a8a7a7;
+    cursor: not-allowed;
+}
+
+body a:hover {
+    color: black;
+}

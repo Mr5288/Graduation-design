@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影管理</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/admin-movie-management.css">
+    <link rel="shortcut icon" href="../bitbug_favicon.ico" type="image/x-icon">
+
+    <!-- <link rel="stylesheet" href="./font/demo.css"> -->
+    <script src="../layui/layui.js"></script>
+    <script src="../js/jquery.js"></script>
+
+</head>
+
+<body>
+    <!-- 顶部黑条 -->
+    <div class="top">
+        <div class="top_left">有个影院订票管理系统</div>
+        <div class="top_right">
+            <ul class="layui-nav">
+                <li class="layui-nav-item" style="margin-right: 20px;">
+                    <a href="./admin-order-management.html">退款申请<span class="layui-badge">9</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="">
+                        <img src="../user/images/User_Avatar/pic3.jpg" class="layui-nav-img user_p">我
+                        <span class="text-avatar">A</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="./admin-user-center-alertinfo.html">修改信息</a></dd>
+                        <dd><a href="javascript:;" id="btnLogout">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主体部分左侧导航右侧展示 -->
+    <div class="index">
+        <div class="index_left">
+            <ul class="navigation">
+                <li><a href="./admin-index.html" class="iconfont">&#xe639;&nbsp;系统首页</a></li>
+                <!-- <li><a href="./admin-system-settings.html" class="iconfont">&#xe60b;&nbsp;系统设置</a></li> -->
+                <li><a href="./admin-user-management.html" class="iconfont">&#xe62a;&nbsp;用户管理</a></li>
+                <li><a href="./admin-movie-management.html" class="iconfont">&#xe6ee;&nbsp;电影管理</a></li>
+                <li><a href="./admin-order-management.html" class="iconfont">&#xe67c;&nbsp;订单管理</a></li>
+                <li><a href="./admin-projection-management.html" class="iconfont">&#xe646;&nbsp;放映管理</a></li>
+                <li><a href="./admin-catering-management.html" class="iconfont">&#xe629;&nbsp;餐饮管理</a></li>
+            </ul>
+        </div>
+        <div class="index_right layui-anim layui-anim-scale">
+            <!-- 嵌入导航 -->
+            <div class="index_right_nav">
+                <a href="./admin-index.html">系统首页　></a>
+                <a href="javascript:;">　电影管理　></a>
+            </div>
+            <!-- <div class="movie_search">
+                <div class="search_input_box">
+                    <p>播放状态：<select class="movie_search_input">
+                <option value ="volvo">选择场次状态</option>
+                <option value ="saab">未开始</option>
+                <option value="opel">进行中</option>
+                <option value="audi">已结束</option>
+                </select></p>
+                </div>
+                <div class="search_input_box">
+                    <p>电影名称：<input type="text" class="movie_search_input"></p>
+                </div>
+                <div class="search_input_box">
+                    <p>场次编号：<input type="text" class="movie_search_input"></p>
+                </div>
+                <div class="search_input_box">
+                    <p><input type="submit" value="查询" class="layui-btn layui-btn-radius layui-btn-normal" style="width: 100px;"></p>
+                </div>
+                <div class="search_input_box">
+                    <p>影厅类型：<select class="movie_search_input">
+                <option value ="volvo">选择放映厅类型</option>
+                <option value ="saab">普通厅</option>
+                <option value="opel">家庭厅</option>
+                <option value="audi">情侣厅</option>
+                <option value="audi">豪华厅</option>
+                </select></p>
+                </div>
+                <div class="search_input_box">
+                    <p>影片时长：<input type="text" class="movie_search_input"></p>
+                </div>
+                <div class="search_input_box">
+                    <p>开始时间：<input type="text" class="movie_search_input"></p>
+                </div>
+                <div class="search_input_box">
+                    <p><input type="reset" class="layui-btn layui-btn-radius layui-btn-danger" style="width: 100px;"></p>
+                </div>
+
+            </div> -->
+            <div class="movie_index ">
+                <fieldset class="layui-elem-field" style="padding: 20px;">
+                    <legend>管理系统 - 电影管理</legend>
+                    <div class="banner">
+                        <div class="centerbox">
+                            <div class="win"><img src="../user/images/movie_pic/example.jpg" alt=""></div>
+                            <div class="movietitle">
+                                <h1>电影中文名</h1>
+                                <p>English name of movie</p>
+                                <ul>
+                                    <li>类型</li>
+                                    <li>地区/时长</li>
+                                    <li>上映时间地区</li>
+                                </ul>
+                            </div>
+                            <button type="button" class="layui-btn layui-btn-normal  layui-btn-lg" id="btnAdduser" style="margin-top: 200px;margin-left: 314px;">上架电影</button>
+                            <div class="usersearch">
+                                <form class="layui-form" id="form-search">
+                                    <div class="layui-form-item layui-inline">
+                                        <input type="text" name="movie_name" placeholder="查询电影" autocomplete="off" class="layui-input" id="username">
+                                    </div>
+                                    <div class="layui-form-item layui-inline">
+                                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">搜索</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <table class="layui-table" style="text-align: center;">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col width="200">
+                            <col width="130">
+                            <col width="80">
+                            <col width="80">
+                            <col width="230">
+                            <col width="60">
+                            <col width="150">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">ID</th>
+                                <th style="text-align: center;">电影中文名</th>
+                                <th style="text-align: center;">电影英文名</th>
+                                <th style="text-align: center;">类型</th>
+                                <th style="text-align: center;">时长</th>
+                                <th style="text-align: center;">地区</th>
+                                <th style="text-align: center;">上映时间</th>
+                                <th style="text-align: center;">价格</th>
+                                <th style="text-align: center;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <div id="pageBox" style="text-align: center;"></div>
+                </fieldset>
+            </div>
+            <div class="footer">
+                <p>20129129-李佳兵</p>
+                <p>毕业设计：基于Web的电影购票管理系统</p>
+                <p>沈阳师范大学软件学院2020级计算机科学与技术专业</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 电影数据的模板 -->
+    <script type="text/html" id="tpl-table">
+        {{each data}}
+        <tr>
+            <td>{{$value.id}}</td>
+            <td>{{$value.movie_name}}</td>
+            <td>{{$value.movie_enname}} </td>
+            <td>{{$value.movie_type}}</td>
+            <td>{{$value.movie_time}}</td>
+            <td>{{$value.area}}</td>
+            <td>{{$value.release_time}}</td>
+            <td>{{$value.price}}</td>
+            <td><button type="button" class="layui-btn layui-btn-warm  layui-btn-sm btn-edit" data-id="{{$value.id}}">编辑</button>
+                <button type="button" class="layui-btn layui-btn-danger  layui-btn-sm btn-delete" data-id="{{$value.id}}">下架</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
+    <!-- 添加电影数据 -->
+    <script type="text/html" id="dialog-add">
+        <form class="layui-form" id="form-add" style="padding-right: 80px;padding-top: 20px;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影中文名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_name" required lay-verify="required" placeholder="请输入电影中文名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影英文名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_enname" required lay-verify="required" placeholder="请输入电影英文名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影类型</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_type" required lay-verify="required" placeholder="请输入电影类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">地区</label>
+                <div class="layui-input-block">
+                    <input type="text" name="area" required lay-verify="required" placeholder="请输入地区" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">影片时长</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_time" required lay-verify="required" placeholder="请输入时长" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">上映时间</label>
+                <div class="layui-input-block">
+                    <input type="text" name="release_time" required lay-verify="required" placeholder="请输入上映时间" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">票价</label>
+                <div class="layui-input-block">
+                    <input type="text" name="price" required lay-verify="required" placeholder="请输入票价" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">剧情简介</label>
+                <div class="layui-input-block">
+                    <textarea name="brief_introduction" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">预览图</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="movie_pic" id="movie_pic" required lay-verify="required" placeholder="请上传图片" autocomplete="off" class="layui-input">
+                        <input type="file" id="file" accept="image/png,image/jpeg" onchange="Change()">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+        </form>
+
+    </script>
+
+    <script>
+        function Change() {
+            var reader = new FileReader(); //创建一个读流
+            var file = $("#file")[0].files[0]; //获取选中文件
+            reader.readAsDataURL(file); //读文件
+            reader.onload = function(e) { //读事件
+                $('#movie_pic').val(e.target.result)
+                    //$("#img").attr('src', e.target.result)
+            };
+        };
+    </script>
+
+    <!-- 更新电影数据 -->
+    <script type="text/html" id="dialog-edit">
+        <form class="layui-form" id="form-edit" lay-filter="form-edit">
+            <input type="hidden" name="id">
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_name" required lay-verify="required" placeholder="请输入电影名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电影类型</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_type" required lay-verify="required" placeholder="请输入电影类型" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">影片时长</label>
+                <div class="layui-input-block">
+                    <input type="text" name="movie_time" required lay-verify="required" placeholder="请输入时长" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">价格</label>
+                <div class="layui-input-block">
+                    <input type="text" name="price" required lay-verify="required" placeholder="请输入价格" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </script>
+
+    <script src="./js/template-web.js"></script>
+    <script src="../cropper/Cropper.js"></script>
+    <script src="../cropper/jquery-cropper.js"></script>
+    <script src="./js/admin-movie-management.js"></script>
+    <script src="./js/admin-user-center-alertinfo.js"></script>
+</body>
+
+</html>

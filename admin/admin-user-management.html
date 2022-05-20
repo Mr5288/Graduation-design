@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/admin-user-management.css">
+    <link rel="shortcut icon" href="../bitbug_favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="./font/demo.css"> -->
+    <script src="../layui/layui.js"></script>
+    <script src="../js/jquery.js"></script>
+
+</head>
+
+<body>
+    <!-- 顶部黑条 -->
+    <div class="top">
+        <div class="top_left">有个影院订票管理系统</div>
+        <div class="top_right">
+            <ul class="layui-nav">
+                <li class="layui-nav-item" style="margin-right: 20px;">
+                    <a href="./admin-order-management.html">退款申请<span class="layui-badge">9</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./admin-user-center.html"><img src="../user/images/User_Avatar/pic3.jpg" class="layui-nav-img user_p">我
+                        <span class="text-avatar">A</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="./admin-user-center-alertinfo.html">修改信息</a></dd>
+                        <dd><a href="javascript:;" id="btnLogout">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主体部分左侧导航右侧展示 -->
+    <div class="index">
+        <div class="index_left">
+            <ul class="navigation">
+                <li><a href="./admin-index.html" class="iconfont">&#xe639;&nbsp;系统首页</a></li>
+                <!-- <li><a href="./admin-system-settings.html" class="iconfont">&#xe60b;&nbsp;系统设置</a></li> -->
+                <li><a href="./admin-user-management.html" class="iconfont">&#xe62a;&nbsp;用户管理</a></li>
+                <li><a href="./admin-movie-management.html" class="iconfont">&#xe6ee;&nbsp;电影管理</a></li>
+                <li><a href="./admin-order-management.html" class="iconfont">&#xe67c;&nbsp;订单管理</a></li>
+                <li><a href="./admin-projection-management.html" class="iconfont">&#xe646;&nbsp;放映管理</a></li>
+                <li><a href="./admin-catering-management.html" class="iconfont">&#xe629;&nbsp;餐饮管理</a></li>
+            </ul>
+        </div>
+        <div class="index_right layui-anim layui-anim-scale">
+            <!-- 嵌入导航 -->
+            <div class="index_right_nav">
+                <a href="./admin-index.html">系统首页　></a>
+                <a href="javascript:;">　用户管理　></a>
+            </div>
+            <div class="usersearch">
+                <form class="layui-form" id="form-search">
+                    <div class="layui-form-item layui-inline">
+                        <select name="sex">
+                            <option value="">请选择性别</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">筛选</button>
+                    </div>
+                    <div class="layui-form-item layui-inline" style="margin-left: 100px;">
+                        <input type="text" name="username" placeholder="查询用户" autocomplete="off" class="layui-input" id="username">
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">搜索</button>
+                    </div>
+                    <!-- <div class="layui-form-item layui-inline" style="margin-left: 300px;">
+                        <button type="button" class="layui-btn layui-btn-normal" id="btnAdduser">添加用户</button>
+                    </div> -->
+                </form>
+            </div>
+            <div class="user_men">
+                <fieldset class="layui-elem-field" style="padding: 20px;">
+                    <legend>用户管理 - 信息操作</legend>
+                    <table class="layui-table" style="text-align: center;">
+                        <colgroup>
+                            <col>
+                            <col width="150">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col width="150">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">ID</th>
+                                <th style="text-align: center;">用户名</th>
+                                <th style="text-align: center;">性别</th>
+                                <th style="text-align: center;">年龄</th>
+                                <th style="text-align: center;">邮箱</th>
+                                <th style="text-align: center;">电话</th>
+                                <th style="text-align: center;">注册时间</th>
+                                <th style="text-align: center;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <div id="pageBox" style="text-align: center;"></div>
+                </fieldset>
+            </div>
+            <div class="footer">
+                <p>20129129-李佳兵</p>
+                <p>毕业设计：基于Web的电影购票管理系统</p>
+                <p>沈阳师范大学软件学院2020级计算机科学与技术专业</p>
+            </div>
+        </div>
+    </div>
+    <!-- 表格数据的模板 -->
+    <script type="text/html" id="tpl-table">
+        {{each data}}
+        <tr>
+            <td>{{$value.id}}</td>
+            <td>{{$value.username}}</td>
+            <td>{{$value.sex}}</td>
+            <td>{{$value.birthday}}</td>
+            <td>{{$value.email}}</td>
+            <td>{{$value.phone}}</td>
+            <td>{{$value.creat_time.substring(0, 10)}}</td>
+            <td><button type="button" class="layui-btn layui-btn-warm  layui-btn-sm btn-edit" data-id="{{$value.id}}">编辑</button>
+                <button type="button" class="layui-btn layui-btn-danger  layui-btn-sm btn-delete" data-id="{{$value.id}}">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 添加用户数据 -->
+    <!-- <script type="text/html" id="dialog-add">
+        <form class="layui-form" id="form-add">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <input type="text" name="sex" required lay-verify="required" placeholder="请输入性别" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">出生日期</label>
+                <div class="layui-input-block">
+                    <input type="text" name="birthday" required lay-verify="required" placeholder="请输入出生日期" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="email" required lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-block">
+                    <input type="text" name="phone" required lay-verify="required" placeholder="请输入电话" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </script> -->
+    <!-- 更新用户数据 -->
+    <script type="text/html" id="dialog-edit">
+        <form class="layui-form" id="form-edit" lay-filter="form-edit">
+            <input type="hidden" name="id">
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <input type="text" name="sex" required lay-verify="required" placeholder="请输入性别" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">出生日期</label>
+                <div class="layui-input-block">
+                    <input type="text" name="birthday" required lay-verify="required" placeholder="请输入出生日期" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="email" required lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电话</label>
+                <div class="layui-input-block">
+                    <input type="text" name="phone" required lay-verify="required" placeholder="请输入电话" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/admin-user-center-alertinfo.js"></script>
+    <script src="./js/admin-user-management.js"></script>
+
+</body>
+
+</html>

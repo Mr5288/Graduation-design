@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+    background-color: #47464a;
+    padding-top: 50px;
+}
+
+.search {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+.sea {
+    width: 700px;
+    height: 50px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid black;
+    padding: 0 0 0 20px;
+}
+
+.btn {
+    position: absolute;
+    top: 3px;
+    width: 70px;
+    height: 52px;
+    border-radius: 0 20px 20px 0;
+    border: 1px solid black;
+    margin-left: -1px;
+    cursor: pointer;
+    font-family: 'iconfont';
+    font-size: 18px;
+    background-color: #f14e43
+}
+
+.no {
+    width: 100%;
+    height: 300px;
+    padding-top: 100px;
+    background-color: #f0f0f0;
+}
+
+.text {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.text p {
+    margin-top: 50px;
+    font-size: 20px;
+    color: #f14e43;
+}
+
+.yes {
+    display: block;
+}
+
+.not {
+    display: none;
+}
+
+.movie-list-page {
+    width: 460px;
+    float: left;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.movie_list {
+    float: left;
+}
+
+.movie-info {
+    margin-left: 25px;
+    float: left;
+}
+
+.movie_name {
+    font-size: 26px;
+    width: auto;
+    margin-top: 27px;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+}
+
+.movie_enname {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.type {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #333;
+}
+
+.time {
+    color: #999;
+    margin-top: 20px;
+}

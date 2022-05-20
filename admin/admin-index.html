@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有个影院后台管理系统</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/admin-index.css">
+    <link rel="shortcut icon" href="../bitbug_favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="./font/demo.css"> -->
+    <script src="../layui/layui.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+    <!-- 顶部黑条 -->
+    <div class="top">
+        <div class="top_left">有个影院订票管理系统</div>
+        <div class="top_right">
+            <ul class="layui-nav">
+                <li class="layui-nav-item" style="margin-right: 20px;">
+                    <a href="./admin-order-management.html">退款申请<span class="layui-badge">9</span></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="./admin-user-center.html"><img src="../user/images/User_Avatar/pic2.jpg" class="layui-nav-img user_p">
+                        <span class="text-avatar" style="width: 35px; height: 35px; line-height: 35px; font-size: 20px; position: relative; top: 3px; left: -13px;">A</span> 我
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="./admin-user-center-alertinfo.html">修改信息</a></dd>
+                        <dd><a href="javascript:;" id="btnLogout">退出登录</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主体部分左侧导航右侧展示 -->
+    <div class="index">
+        <div class="index_left">
+            <ul class="navigation">
+                <li><a href="./admin-index.html" class="iconfont">&#xe639;&nbsp;系统首页</a></li>
+                <!-- <li><a href="./admin-system-settings.html" class="iconfont">&#xe60b;&nbsp;系统设置</a></li> -->
+                <li><a href="./admin-user-management.html" class="iconfont">&#xe62a;&nbsp;用户管理</a></li>
+                <li><a href="./admin-movie-management.html" class="iconfont">&#xe6ee;&nbsp;电影管理</a></li>
+                <li><a href="./admin-order-management.html" class="iconfont">&#xe67c;&nbsp;订单管理</a></li>
+                <li><a href="./admin-projection-management.html" class="iconfont">&#xe646;&nbsp;放映管理</a></li>
+                <li><a href="./admin-catering-management.html" class="iconfont">&#xe629;&nbsp;餐饮管理</a></li>
+            </ul>
+        </div>
+        <div class="index_right layui-anim layui-anim-scale">
+            <!-- 嵌入导航 -->
+            <div class="index_right_nav">
+                <a href="./admin-index.html">系统首页></a>
+            </div>
+            <!-- 管理员信息展示 -->
+            <div class="index_right_admin">
+                <div class="user_info">
+                    <div class="user_info_left">
+                        <a href="./admin-user-center.html">
+                            <img src="../user/images/User_Avatar/pic3.jpg" alt="" class="user_info_left user_p">
+                            <span class="text-avatar">A</span>
+                        </a>
+                    </div>
+                    <div class="user_info_right">
+                        <div class="user_info_right_name">
+
+                            <span id="user-name">Mr.Li</span>
+                            <div class="user_info_right_name_attribute">超级管理员</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="user_info_buttom">
+                    <p>首次注册时间：<span id="creat_time">2021-01-08</span></p>
+                    <p>信息更新时间：<span id="now_time">2022-01-08</span></p>
+                </div>
+            </div>
+            <!-- 卡片展示 -->
+            <div class="index_right_statistics">
+                <ul>
+                    <li>
+                        <a href="./admin-user-management.html">
+                            <div class="statistics_user statistics">
+                                <div class="statistics_user_left modular infont iconfont">&#xe63c;</div>
+                                <div class="statistics_user_right layout">
+                                    <div class="statistics_user_right_num font_css " id="usernum">0000</div>
+                                    <div class="statistics_user_right_name font_inf">用户数量</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./admin-order-management.html">
+                            <div class="statistics_order_today statistics">
+                                <div class="statistics_order_today_left modular infont iconfont">&#xe67c;</div>
+                                <div class="statistics_order_right layout">
+                                    <div class="statistics_order_today_num font_css " id="order">0000</div>
+                                    <div class="statistics_order_today_name font_inf">订单总数</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <div class="statistics_sales_today statistics">
+                                <div class="statistics_sales_today_left modular  infont iconfont ">&#xe606;</div>
+                                <div class="statistics_sales_today_right layout">
+                                    <div class="statistics_sales_today_num font_css " id="price">0000</div>
+                                    <div class="statistics_sales_today_name font_inf">累计营业额</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 数据统计展示 -->
+            <div id="data" class="index_right_data"></div>
+            <div id="data2" class="index_right_data2"></div>
+        </div>
+        <div class="footer">
+            <p>20129129-李佳兵</p>
+            <p>毕业设计：基于Web的电影购票管理系统</p>
+            <p>沈阳师范大学软件学院2020级计算机科学与技术专业</p>
+        </div>
+    </div>
+    <script src="./js/admin-index.js"></script>
+    <script src="./js/admin_data.js"></script>
+</body>
+
+</html>

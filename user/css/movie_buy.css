@@ -1,0 +1,191 @@
+   * {
+       margin: 0;
+       padding: 0;
+       border: 0;
+   }
+   
+   .banner {
+       width: 100%;
+       height: 386px;
+       margin-bottom: 40px;
+       background-color: rgb(57, 47, 89);
+   }
+   
+   .centerbox {
+       position: relative;
+       width: 1000px;
+       height: 386px;
+       margin-left: 50px;
+   }
+   
+   .win {
+       position: absolute;
+       width: 240px;
+       height: 330px;
+       margin: 0 50px;
+       margin-top: 30px;
+       border: 4px solid #fff;
+       background-color: brown
+   }
+   
+   .win img {
+       width: 240px;
+       height: 330px;
+   }
+   
+   .movietitle {
+       position: absolute;
+       width: 270px;
+       height: 200px;
+       margin-top: 30px;
+       margin-left: 330px;
+       color: #fff;
+   }
+   
+   .movietitle ul li {
+       margin-top: 5px;
+   }
+   
+   .scorebuy {
+       width: 270px;
+       height: 100px;
+       position: absolute;
+       bottom: 20px;
+       margin-left: 330px;
+   }
+   
+   .red_buy {
+       cursor: pointer;
+       float: left;
+       display: block;
+       width: 120px;
+       height: 25px;
+       background-color: #756189;
+       margin-right: 10px;
+       padding-top: 11px;
+       text-align: center;
+       font-size: 14px;
+       line-height: 16px;
+       color: #fff;
+       border-radius: 2px;
+   }
+   
+   .redbuy {
+       cursor: pointer;
+       float: left;
+       display: block;
+       width: 250px;
+       height: 25px;
+       margin-top: 10px;
+       margin-right: 10px;
+       padding-top: 11px;
+       text-align: center;
+       font-size: 14px;
+       line-height: 16px;
+       color: #fff;
+       border-radius: 2px;
+       background-color: #df2d2d;
+   }
+   
+   .movie_time {
+       width: 1200px;
+       height: 30px;
+       font-size: 20px;
+       margin: 0 auto;
+   }
+   
+   .movie_table {
+       width: 1200px;
+       height: 30px;
+       margin: 20px auto;
+   }
+   
+   .no {
+       width: 1200px;
+       height: 150px;
+       margin: 20px auto;
+       background-color: #fff;
+   }
+   
+   .no p {
+       text-align: center;
+       font-size: 25px;
+       margin-top: 100px;
+   }
+   
+   .not {
+       display: none;
+   }
+   
+   .yes {
+       display: block;
+   }
+   
+   .time_ {
+       padding-left: 20px;
+   }
+   
+   .plist {
+       width: 100%;
+       border: none;
+       border-spacing: 0;
+   }
+   
+   .plist thead {
+       background-color: #f7f7f7;
+       color: #333;
+       font-size: 16px;
+       padding: 18px 0;
+   }
+   
+   .plist thead th {
+       padding: 16px 0;
+   }
+   
+   .plist tbody td {
+       text-align: center;
+       width: 20%;
+   }
+   
+   .plist tbody tr {
+       height: 82px;
+   }
+   
+   .buy-btn {
+       display: inline-block;
+       width: 80px;
+       height: 30px;
+       color: #fff;
+       background-color: #f03d37;
+       font-size: 14px;
+       line-height: 30px;
+       border-radius: 100px;
+       text-align: center;
+   }
+   
+   .begin-time {
+       font-size: 18px;
+       color: #333;
+       font-weight: 700;
+       text-align: center;
+   }
+   
+   .end-time {
+       font-size: 12px;
+       color: #999;
+       font-size: 12px;
+   }
+   
+   .price {
+       font-size: 18px;
+       color: #f03d37;
+       font-weight: 700;
+   }
+   
+   .see_time {
+       cursor: pointer;
+   }
+   
+   .see_time:hover {
+       color: #df2d2d;
+   }
